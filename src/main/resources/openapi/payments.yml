@@ -1,0 +1,203 @@
+openapi: 3.0.3
+info:
+  title: Payments Service API
+  description: Microservice for managing payment intents and monitoring on-chain transactions
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+paths:
+  /api/payments/intent:
+    post:
+      summary: Create payment intent
+      description: Creates a payment intent and returns transaction payload for MetaMask
+      operationId: createPaymentIntent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentIntentRequest'
+      responses:
+        '200':
+          description: Payment intent created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/payments/tx/{hash}:
+    get:
+      summary: Get transaction status
+      description: Returns the status of a transaction by its hash
+      operationId: getTransactionStatus
+      parameters:
+        - name: hash
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Transaction hash
+      responses:
+        '200':
+          description: Transaction status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TxStatusResponse'
+        '404':
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/payments/booking/{id}/status:
+    get:
+      summary: Get booking status
+      description: Returns aggregated booking status (off-chain DB + last on-chain event)
+      operationId: getBookingStatus
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Booking UUID
+      responses:
+        '200':
+          description: Booking status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookingStatusResponse'
+        '404':
+          description: Booking not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /health:
+    get:
+      summary: Health check
+      description: Returns service health status
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: UP
+                  service:
+                    type: string
+                    example: payments-svc
+
+components:
+  schemas:
+    PaymentIntentRequest:
+      type: object
+      required:
+        - bookingId
+      properties:
+        bookingId:
+          type: string
+          format: uuid
+          description: UUID of the booking
+
+    PaymentIntentResponse:
+      type: object
+      properties:
+        referenceId:
+          type: string
+          format: uuid
+          description: Unique reference ID for this payment intent
+        to:
+          type: string
+          description: Escrow contract address (0x...)
+          example: "0x1234567890123456789012345678901234567890"
+        value:
+          type: string
+          description: Amount in Wei (as string)
+          example: "1000000000000000000"
+        data:
+          type: string
+          description: ABI-encoded function call data (0x...)
+          example: "0x..."
+        chainId:
+          type: integer
+          description: Chain ID (11155111 for Sepolia)
+          example: 11155111
+        totalAmountWei:
+          type: string
+          description: Total amount in Wei
+          example: "1500000000000000000"
+
+    TxStatusResponse:
+      type: object
+      properties:
+        txHash:
+          type: string
+          description: Transaction hash
+        status:
+          type: string
+          enum: [PENDING, MINED, FAILED]
+        blockNumber:
+          type: integer
+          nullable: true
+          description: Block number where transaction was mined
+        bookingId:
+          type: string
+          format: uuid
+          description: Associated booking UUID
+
+    BookingStatusResponse:
+      type: object
+      properties:
+        bookingId:
+          type: string
+          format: uuid
+        state:
+          type: string
+          enum: [PENDING, PAID, CHECKED_IN, COMPLETED, DISPUTED, RESOLVED]
+        priceWei:
+          type: string
+          description: Price in Wei
+        depositWei:
+          type: string
+          description: Deposit in Wei
+        lastEventType:
+          type: string
+          nullable: true
+          description: Last processed on-chain event type
+        lastEventBlock:
+          type: integer
+          nullable: true
+          description: Block number of last processed event
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error code
+        message:
+          type: string
+          description: Error message
+        errors:
+          type: object
+          description: Additional error details (for validation errors)
+
