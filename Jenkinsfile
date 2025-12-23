@@ -137,6 +137,8 @@ pipeline {
                     docker rmi localhost:5000/real-estate-payment-service:${BUILD_NUMBER} || true
                 """
             }
+            // Clean workspace
+            deleteDir()
         }
         success {
             echo "Payment-service pipeline completed successfully! 🎉"
