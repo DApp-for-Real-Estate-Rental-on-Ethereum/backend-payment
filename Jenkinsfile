@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    
     environment {
         DOCKER_IMAGE_NAME = 'medgm/real-estate-payment-service'
         SONARQUBE_TOKEN = credentials('sonarqube-token')
@@ -14,7 +14,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Verify Project Layout') {
             steps {
                 script {
@@ -35,7 +35,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Build & Test') {
             steps {
                 script {
@@ -47,7 +47,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Code Quality Analysis') {
             steps {
                 script {
@@ -61,7 +61,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Build Docker Image') {
             steps {
                 script {
@@ -77,7 +77,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Push to Docker Hub') {
             steps {
                 script {
@@ -85,7 +85,7 @@ pipeline {
                         sh """
                             echo "Logging into Docker Hub..."
                             echo \$DOCKER_PASSWORD | docker login -u \$DOCKER_USERNAME --password-stdin
-
+                            
                             GIT_COMMIT_SHORT=\$(git rev-parse --short HEAD)
                             echo "Pushing images to Docker Hub..."
                             docker push ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER}
@@ -96,7 +96,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Deploy to Local Registry') {
             steps {
                 script {
@@ -104,17 +104,17 @@ pipeline {
                         echo "Tagging and pushing to local registry..."
                         docker tag ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER} localhost:5000/real-estate-payment-service:${BUILD_NUMBER}
                         docker tag ${DOCKER_IMAGE_NAME}:${BUILD_NUMBER} localhost:5000/real-estate-payment-service:latest
-
+                        
                         docker push localhost:5000/real-estate-payment-service:${BUILD_NUMBER}
                         docker push localhost:5000/real-estate-payment-service:latest
-
+                        
                         echo "Images in local registry:"
                         docker images | grep real-estate-payment-service
                     """
                 }
             }
         }
-
+        
         stage('Integration Tests') {
             steps {
                 script {
@@ -126,7 +126,7 @@ pipeline {
             }
         }
     }
-
+    
     post {
         always {
             script {
