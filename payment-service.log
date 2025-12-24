@@ -1,0 +1,764 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36mma.fstt:payments-svc[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding payments-svc 1.0.0[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mspring-boot-maven-plugin:3.5.7:run[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mpayments-svc[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:resources[m [1m(default-resources)[m @ [36mpayments-svc[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.14.1:compile[m [1m(default-compile)[m @ [36mpayments-svc[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.3.1:testResources[m [1m(default-testResources)[m @ [36mpayments-svc[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/test/resources to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.14.1:testCompile[m [1m(default-testCompile)[m @ [36mpayments-svc[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mspring-boot-maven-plugin:3.5.7:run[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mpayments-svc[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mspring-boot-maven-plugin:3.5.7:run[m [1m(default-cli)[m @ [36mpayments-svc[0;1m ---[m
+[[1;34mINFO[m] Attaching agents: []
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+{"@timestamp":"2025-12-24T18:42:48.414293225Z","@version":"1","level":"INFO","message":"Starting PaymentServiceApplication using Java 17.0.17 with PID 34770 (/home/medgm/vsc/Projet JEE/payment-service/target/classes started by medgm in /home/medgm/vsc/Projet JEE/payment-service)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:48.427148078Z","@version":"1","level":"DEBUG","message":"Running with Spring Boot v3.5.7, Spring v6.2.12","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:48.430986872Z","@version":"1","level":"INFO","message":"The following 1 profile is active: \"local\"","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:48.535360246Z","@version":"1","level":"INFO","message":"Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:48.536199439Z","@version":"1","level":"INFO","message":"For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:49.924577759Z","@version":"1","level":"INFO","message":"Bootstrapping Spring Data JPA repositories in DEFAULT mode.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:50.00602046Z","@version":"1","level":"INFO","message":"Finished Spring Data repository scanning in 72 ms. Found 4 JPA repository interfaces.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:50.965417194Z","@version":"1","level":"INFO","message":"Tomcat initialized with port 8085 (http)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:50.978018665Z","@version":"1","level":"INFO","message":"Starting service [Tomcat]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardService","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:50.978467664Z","@version":"1","level":"INFO","message":"Starting Servlet engine: [Apache Tomcat/10.1.48]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardEngine","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:51.033832128Z","@version":"1","level":"INFO","message":"Initializing Spring embedded WebApplicationContext","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:51.03612537Z","@version":"1","level":"INFO","message":"Root WebApplicationContext: initialization completed in 2497 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.s.c.ServletWebServerApplicationContext","thread":"restartedMain"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+{"@timestamp":"2025-12-24T18:42:51.407012044Z","@version":"1","level":"INFO","message":"HHH000204: Processing PersistenceUnitInfo [name: default]","correlationId":"","bookingId":"","txHash":"","logger":"o.h.jpa.internal.util.LogHelper","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:51.483081359Z","@version":"1","level":"INFO","message":"HHH000412: Hibernate ORM core version 6.6.33.Final","correlationId":"","bookingId":"","txHash":"","logger":"org.hibernate.Version","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:51.539156307Z","@version":"1","level":"INFO","message":"HHH000026: Second-level cache disabled","correlationId":"","bookingId":"","txHash":"","logger":"o.h.c.i.RegionFactoryInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:51.810252894Z","@version":"1","level":"INFO","message":"No LoadTimeWeaver setup: ignoring JPA class transformer","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.p.SpringPersistenceUnitInfo","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:51.844492016Z","@version":"1","level":"INFO","message":"HikariPool-1 - Starting...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:52.003898947Z","@version":"1","level":"INFO","message":"HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@73e6db8b","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.pool.HikariPool","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:52.00534306Z","@version":"1","level":"INFO","message":"HikariPool-1 - Start completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:52.035331175Z","@version":"1","level":"WARN","message":"HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)","correlationId":"","bookingId":"","txHash":"","logger":"org.hibernate.orm.deprecation","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:52.060491836Z","@version":"1","level":"INFO","message":"HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 15.15\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown","correlationId":"","bookingId":"","txHash":"","logger":"o.hibernate.orm.connections.pooling","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:53.112890499Z","@version":"1","level":"INFO","message":"HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)","correlationId":"","bookingId":"","txHash":"","logger":"o.h.e.t.j.p.i.JtaPlatformInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:53.18077956Z","@version":"1","level":"INFO","message":"Initialized JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:53.576181636Z","@version":"1","level":"INFO","message":"Hibernate is in classpath; If applicable, HQL parser will be used.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.j.r.query.QueryEnhancerFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:54.807111307Z","@version":"1","level":"WARN","message":"spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.163557525Z","@version":"1","level":"INFO","message":"Exposing 3 endpoints beneath base path '/actuator'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.e.web.EndpointLinksResolver","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.21450318Z","@version":"1","level":"WARN","message":"\n\nUsing generated security password: dc714d30-7550-43b1-84fa-f7dc11c97e55\n\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.s.s.UserDetailsServiceAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.22520634Z","@version":"1","level":"INFO","message":"Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager","correlationId":"","bookingId":"","txHash":"","logger":"o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.781838195Z","@version":"1","level":"INFO","message":"H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/lotfi?sslmode=disable'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.h.H2ConsoleAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.826380774Z","@version":"1","level":"WARN","message":"Unable to start LiveReload server","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.OptionalLiveReloadServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.991539971Z","@version":"1","level":"INFO","message":"Tomcat started on port 8085 (http) with context path '/'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:55.995993247Z","@version":"1","level":"INFO","message":"Attempting to connect to: [localhost:5672]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:56.048816549Z","@version":"1","level":"INFO","message":"Created new connection: rabbitConnectionFactory#3909144e:0/SimpleConnection@59529530 [delegate=amqp://guest@127.0.0.1:5672/, localPort=59484]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:56.131171392Z","@version":"1","level":"INFO","message":"Started PaymentServiceApplication in 8.569 seconds (process running for 9.244)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:42:56.174525928Z","@version":"1","level":"WARN","message":"Execution of Rabbit message listener failed.","stack_trace":"org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:157)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1694)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1616)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1604)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1595)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1540)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1521)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1091)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:1027)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1431)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1331)\n\tat java.base/java.lang.Thread.run(Thread.java:840)\nCaused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:362)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:321)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:303)\n\tat org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:349)\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:382)\n\tat org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:255)\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:147)\n\t... 11 common frames omitted\nCaused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Long` from String \"prop-casa-001\": not a valid `java.lang.Long` value\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 89] (through reference chain: ma.fstt.paymentservice.core.messaging.BookingCreatedConsumer$BookingCreatedMessage[\"propertyId\"])\n\tat com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)\n\tat com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986)\n\tat com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272)\n\tat com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseLong(StdDeserializer.java:989)\n\tat com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseLong(StdDeserializer.java:977)\n\tat com.fasterxml.jackson.databind.deser.std.NumberDeserializers$LongDeserializer.deserialize(NumberDeserializers.java:575)\n\tat com.fasterxml.jackson.databind.deser.std.NumberDeserializers$LongDeserializer.deserialize(NumberDeserializers.java:550)\n\tat com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392)\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)\n\tat com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)\n\tat com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4971)\n\tat com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3887)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:430)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:386)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:359)\n\t... 18 common frames omitted\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.ConditionalRejectingErrorHandler","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1"}
+{"@timestamp":"2025-12-24T18:42:56.201372465Z","@version":"1","level":"WARN","message":"Fatal message conversion error; message rejected; it will be dropped or routed to a dead letter exchange, if so configured: (Body:'[B@136e9619(byte[145])' MessageProperties [headers={__ContentTypeId__=java.lang.Object, __KeyTypeId__=java.lang.Object, __TypeId__=java.util.HashMap}, contentType=application/json, contentEncoding=UTF-8, contentLength=0, receivedDeliveryMode=PERSISTENT, priority=0, redelivered=false, receivedExchange=, receivedRoutingKey=booking.created, deliveryTag=1, consumerTag=amq.ctag-D8uSd0Gy7UsF8sNXo-Py1A, consumerQueue=booking.created])","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.ConditionalRejectingErrorHandler$DefaultExceptionStrategy","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1"}
+{"@timestamp":"2025-12-24T18:42:56.20180889Z","@version":"1","level":"ERROR","message":"Execution of Rabbit message listener failed, and the error handler threw an exception","stack_trace":"org.springframework.amqp.AmqpRejectAndDontRequeueException: Error Handler converted exception to fatal\n\tat org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler.handleError(ConditionalRejectingErrorHandler.java:148)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeErrorHandler(AbstractMessageListenerContainer.java:1487)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.handleListenerException(AbstractMessageListenerContainer.java:1780)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1561)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1521)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1091)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:1027)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1431)\n\tat org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1331)\n\tat java.base/java.lang.Thread.run(Thread.java:840)\nCaused by: org.springframework.amqp.rabbit.support.ListenerExecutionFailedException: Failed to convert message\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:157)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1694)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1616)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1604)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1595)\n\tat org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListenerAndHandleException(AbstractMessageListenerContainer.java:1540)\n\t... 6 common frames omitted\nCaused by: org.springframework.amqp.support.converter.MessageConversionException: Failed to convert Message content\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:362)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:321)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.fromMessage(AbstractJackson2MessageConverter.java:303)\n\tat org.springframework.amqp.rabbit.listener.adapter.AbstractAdaptableMessageListener.extractMessage(AbstractAdaptableMessageListener.java:349)\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter$MessagingMessageConverterAdapter.extractPayload(MessagingMessageListenerAdapter.java:382)\n\tat org.springframework.amqp.support.converter.MessagingMessageConverter.fromMessage(MessagingMessageConverter.java:132)\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.toMessagingMessage(MessagingMessageListenerAdapter.java:255)\n\tat org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:147)\n\t... 11 common frames omitted\nCaused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Long` from String \"prop-casa-001\": not a valid `java.lang.Long` value\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 89] (through reference chain: ma.fstt.paymentservice.core.messaging.BookingCreatedConsumer$BookingCreatedMessage[\"propertyId\"])\n\tat com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)\n\tat com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986)\n\tat com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272)\n\tat com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseLong(StdDeserializer.java:989)\n\tat com.fasterxml.jackson.databind.deser.std.StdDeserializer._parseLong(StdDeserializer.java:977)\n\tat com.fasterxml.jackson.databind.deser.std.NumberDeserializers$LongDeserializer.deserialize(NumberDeserializers.java:575)\n\tat com.fasterxml.jackson.databind.deser.std.NumberDeserializers$LongDeserializer.deserialize(NumberDeserializers.java:550)\n\tat com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:392)\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:177)\n\tat com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342)\n\tat com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4971)\n\tat com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3887)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertBytesToObject(AbstractJackson2MessageConverter.java:430)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.convertContent(AbstractJackson2MessageConverter.java:386)\n\tat org.springframework.amqp.support.converter.AbstractJackson2MessageConverter.doFromMessage(AbstractJackson2MessageConverter.java:359)\n\t... 18 common frames omitted\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1"}
+{"@timestamp":"2025-12-24T18:43:06.045038627Z","@version":"1","level":"INFO","message":"Initializing Spring DispatcherServlet 'dispatcherServlet'","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"http-nio-8085-exec-1"}
+{"@timestamp":"2025-12-24T18:43:06.04573098Z","@version":"1","level":"INFO","message":"Initializing Servlet 'dispatcherServlet'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.web.servlet.DispatcherServlet","thread":"http-nio-8085-exec-1"}
+{"@timestamp":"2025-12-24T18:43:06.048003397Z","@version":"1","level":"INFO","message":"Completed initialization in 2 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.web.servlet.DispatcherServlet","thread":"http-nio-8085-exec-1"}
+DEBUG: getBookingDetails called for id: 4
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.check_in_date,
+        b1_0.check_out_date,
+        b1_0.created_at,
+        b1_0.long_stay_discount_percent,
+        b1_0.negotiation_expires_at,
+        b1_0.on_chain_tx_hash,
+        b1_0.property_id,
+        b1_0.requested_negotiation_percent,
+        b1_0.status,
+        b1_0.total_price,
+        b1_0.updated_at,
+        b1_0.user_id 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+DEBUG: Booking found: Booking(id=4, userId=4, propertyId=prop-casa-001, checkInDate=2025-12-24, checkOutDate=2025-12-27, onChainTxHash=null, status=PENDING_PAYMENT, totalPrice=1350.0, createdAt=2025-12-24T18:31:09.205089Z, updatedAt=2025-12-24T18:31:09.205090Z, longStayDiscountPercent=0, requestedNegotiationPercent=null, negotiationExpiresAt=null)
+DEBUG: Fetching property: prop-casa-001
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.bathrooms,
+        p1_0.bedrooms,
+        p1_0.capacity,
+        p1_0.city,
+        p1_0.country,
+        p1_0.daily_price,
+        p1_0.deposit_amount,
+        p1_0.description,
+        p1_0.latitude,
+        p1_0.longitude,
+        p1_0.max_negotiation_percent,
+        p1_0.negotiation_percentage,
+        p1_0.number_of_bathrooms,
+        p1_0.number_of_bedrooms,
+        p1_0.number_of_beds,
+        p1_0.price,
+        p1_0.status,
+        p1_0.title,
+        p1_0.user_id 
+    from
+        properties p1_0 
+    where
+        p1_0.id=?
+DEBUG: Property response: {depositAmount=200.0, dailyPrice=450.0, country=Morocco, isAvailable=true, negotiationPercentage=10.0, address=null, city=Casablanca, latitude=33.5928, description=Modern apartment in central Casablanca, close to tram and business district., numberOfBeds=3, title=Modern Business Apartment - Casablanca, userId=2, discountEnabled=false, capacity=4, isNegotiable=true, id=prop-casa-001, numberOfBedrooms=2, maxNegotiationPercent=null, numberOfBathrooms=1, longitude=-7.6192}
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+DEBUG: Returning response: BookingDetailsResponse(bookingId=4, status=PENDING_PAYMENT, totalPrice=1350.0, checkInDate=2025-12-24, checkOutDate=2025-12-27, propertyId=prop-casa-001, propertyTitle=Modern Business Apartment - Casablanca, propertyPrice=450.0, ownerWalletAddress=0xHOST, userId=4, currentUserId=4, userFirstName=MedGM, userLastName=Host, userEmail=nitixaj335@roratu.com, userWalletAddress=0xMEDGM)
+DEBUG: getBookingDetails called for id: 4
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.check_in_date,
+        b1_0.check_out_date,
+        b1_0.created_at,
+        b1_0.long_stay_discount_percent,
+        b1_0.negotiation_expires_at,
+        b1_0.on_chain_tx_hash,
+        b1_0.property_id,
+        b1_0.requested_negotiation_percent,
+        b1_0.status,
+        b1_0.total_price,
+        b1_0.updated_at,
+        b1_0.user_id 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+DEBUG: Booking found: Booking(id=4, userId=4, propertyId=prop-casa-001, checkInDate=2025-12-24, checkOutDate=2025-12-27, onChainTxHash=null, status=PENDING_PAYMENT, totalPrice=1350.0, createdAt=2025-12-24T18:31:09.205089Z, updatedAt=2025-12-24T18:31:09.205090Z, longStayDiscountPercent=0, requestedNegotiationPercent=null, negotiationExpiresAt=null)
+DEBUG: Fetching property: prop-casa-001
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.bathrooms,
+        p1_0.bedrooms,
+        p1_0.capacity,
+        p1_0.city,
+        p1_0.country,
+        p1_0.daily_price,
+        p1_0.deposit_amount,
+        p1_0.description,
+        p1_0.latitude,
+        p1_0.longitude,
+        p1_0.max_negotiation_percent,
+        p1_0.negotiation_percentage,
+        p1_0.number_of_bathrooms,
+        p1_0.number_of_bedrooms,
+        p1_0.number_of_beds,
+        p1_0.price,
+        p1_0.status,
+        p1_0.title,
+        p1_0.user_id 
+    from
+        properties p1_0 
+    where
+        p1_0.id=?
+DEBUG: Property response: {depositAmount=200.0, dailyPrice=450.0, country=Morocco, isAvailable=true, negotiationPercentage=10.0, address=null, city=Casablanca, latitude=33.5928, description=Modern apartment in central Casablanca, close to tram and business district., numberOfBeds=3, title=Modern Business Apartment - Casablanca, userId=2, discountEnabled=false, capacity=4, isNegotiable=true, id=prop-casa-001, numberOfBedrooms=2, maxNegotiationPercent=null, numberOfBathrooms=1, longitude=-7.6192}
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+DEBUG: Returning response: BookingDetailsResponse(bookingId=4, status=PENDING_PAYMENT, totalPrice=1350.0, checkInDate=2025-12-24, checkOutDate=2025-12-27, propertyId=prop-casa-001, propertyTitle=Modern Business Apartment - Casablanca, propertyPrice=450.0, ownerWalletAddress=0xHOST, userId=4, currentUserId=4, userFirstName=MedGM, userLastName=Host, userEmail=nitixaj335@roratu.com, userWalletAddress=0xMEDGM)
+{"@timestamp":"2025-12-24T18:43:21.283589338Z","@version":"1","level":"INFO","message":"Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener","thread":"File Watcher"}
+{"@timestamp":"2025-12-24T18:43:21.292006761Z","@version":"1","level":"INFO","message":"Waiting for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:43:22.210044567Z","@version":"1","level":"INFO","message":"Successfully waited for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:43:22.211122537Z","@version":"1","level":"INFO","message":"Commencing graceful shutdown. Waiting for active requests to complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"Thread-1"}
+{"@timestamp":"2025-12-24T18:43:22.213331316Z","@version":"1","level":"INFO","message":"Graceful shutdown complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"tomcat-shutdown"}
+{"@timestamp":"2025-12-24T18:43:22.225262904Z","@version":"1","level":"INFO","message":"Closing JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"Thread-1"}
+{"@timestamp":"2025-12-24T18:43:22.231173989Z","@version":"1","level":"INFO","message":"HikariPool-1 - Shutdown initiated...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-1"}
+{"@timestamp":"2025-12-24T18:43:22.237397216Z","@version":"1","level":"INFO","message":"HikariPool-1 - Shutdown completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-1"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+{"@timestamp":"2025-12-24T18:43:22.477671843Z","@version":"1","level":"INFO","message":"Starting PaymentServiceApplication using Java 17.0.17 with PID 34770 (/home/medgm/vsc/Projet JEE/payment-service/target/classes started by medgm in /home/medgm/vsc/Projet JEE/payment-service)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:22.478601051Z","@version":"1","level":"DEBUG","message":"Running with Spring Boot v3.5.7, Spring v6.2.12","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:22.47893762Z","@version":"1","level":"INFO","message":"The following 1 profile is active: \"local\"","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.114575141Z","@version":"1","level":"INFO","message":"Bootstrapping Spring Data JPA repositories in DEFAULT mode.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.147237149Z","@version":"1","level":"INFO","message":"Finished Spring Data repository scanning in 30 ms. Found 4 JPA repository interfaces.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.455939329Z","@version":"1","level":"INFO","message":"Tomcat initialized with port 8085 (http)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.457683275Z","@version":"1","level":"INFO","message":"Starting service [Tomcat]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardService","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.458469905Z","@version":"1","level":"INFO","message":"Starting Servlet engine: [Apache Tomcat/10.1.48]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardEngine","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.496891481Z","@version":"1","level":"INFO","message":"Initializing Spring embedded WebApplicationContext","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.497327813Z","@version":"1","level":"INFO","message":"Root WebApplicationContext: initialization completed in 1014 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.s.c.ServletWebServerApplicationContext","thread":"restartedMain"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+{"@timestamp":"2025-12-24T18:43:23.699560947Z","@version":"1","level":"INFO","message":"HHH000204: Processing PersistenceUnitInfo [name: default]","correlationId":"","bookingId":"","txHash":"","logger":"o.h.jpa.internal.util.LogHelper","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.707560884Z","@version":"1","level":"INFO","message":"HHH000026: Second-level cache disabled","correlationId":"","bookingId":"","txHash":"","logger":"o.h.c.i.RegionFactoryInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.72836378Z","@version":"1","level":"INFO","message":"No LoadTimeWeaver setup: ignoring JPA class transformer","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.p.SpringPersistenceUnitInfo","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.731023379Z","@version":"1","level":"INFO","message":"HikariPool-2 - Starting...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.767878984Z","@version":"1","level":"INFO","message":"HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5d055d68","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.pool.HikariPool","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.768781745Z","@version":"1","level":"INFO","message":"HikariPool-2 - Start completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.775622164Z","@version":"1","level":"WARN","message":"HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)","correlationId":"","bookingId":"","txHash":"","logger":"org.hibernate.orm.deprecation","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:23.779713463Z","@version":"1","level":"INFO","message":"HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 15.15\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown","correlationId":"","bookingId":"","txHash":"","logger":"o.hibernate.orm.connections.pooling","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.008645528Z","@version":"1","level":"INFO","message":"HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)","correlationId":"","bookingId":"","txHash":"","logger":"o.h.e.t.j.p.i.JtaPlatformInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.037199434Z","@version":"1","level":"INFO","message":"Initialized JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.358985174Z","@version":"1","level":"WARN","message":"spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.643396112Z","@version":"1","level":"INFO","message":"Exposing 3 endpoints beneath base path '/actuator'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.e.web.EndpointLinksResolver","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.685541414Z","@version":"1","level":"WARN","message":"\n\nUsing generated security password: f7baa2a6-bf2f-4564-8a61-fce88adc1f76\n\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.s.s.UserDetailsServiceAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.688113308Z","@version":"1","level":"INFO","message":"Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager","correlationId":"","bookingId":"","txHash":"","logger":"o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.903016229Z","@version":"1","level":"INFO","message":"H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/lotfi?sslmode=disable'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.h.H2ConsoleAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.918150674Z","@version":"1","level":"WARN","message":"Unable to start LiveReload server","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.OptionalLiveReloadServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.955521048Z","@version":"1","level":"INFO","message":"Tomcat started on port 8085 (http) with context path '/'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.957485258Z","@version":"1","level":"INFO","message":"Attempting to connect to: [localhost:5672]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:24.963433693Z","@version":"1","level":"INFO","message":"Created new connection: rabbitConnectionFactory#1ea76fd:0/SimpleConnection@66c1a41d [delegate=amqp://guest@127.0.0.1:5672/, localPort=57798]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:25.00081205Z","@version":"1","level":"INFO","message":"Started PaymentServiceApplication in 2.599 seconds (process running for 38.113)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:25.009091628Z","@version":"1","level":"INFO","message":"Condition evaluation unchanged","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.ConditionEvaluationDeltaLoggingListener","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:27.324301862Z","@version":"1","level":"INFO","message":"Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener","thread":"File Watcher"}
+{"@timestamp":"2025-12-24T18:43:27.333489445Z","@version":"1","level":"INFO","message":"Waiting for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:43:27.978008581Z","@version":"1","level":"INFO","message":"Successfully waited for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:43:27.980854188Z","@version":"1","level":"INFO","message":"Commencing graceful shutdown. Waiting for active requests to complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"Thread-5"}
+{"@timestamp":"2025-12-24T18:43:27.9862157Z","@version":"1","level":"INFO","message":"Graceful shutdown complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"tomcat-shutdown"}
+{"@timestamp":"2025-12-24T18:43:27.999549166Z","@version":"1","level":"INFO","message":"Closing JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"Thread-5"}
+{"@timestamp":"2025-12-24T18:43:28.001805804Z","@version":"1","level":"INFO","message":"HikariPool-2 - Shutdown initiated...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-5"}
+{"@timestamp":"2025-12-24T18:43:28.008535536Z","@version":"1","level":"INFO","message":"HikariPool-2 - Shutdown completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-5"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+{"@timestamp":"2025-12-24T18:43:28.25455161Z","@version":"1","level":"INFO","message":"Starting PaymentServiceApplication using Java 17.0.17 with PID 34770 (/home/medgm/vsc/Projet JEE/payment-service/target/classes started by medgm in /home/medgm/vsc/Projet JEE/payment-service)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:28.256038796Z","@version":"1","level":"DEBUG","message":"Running with Spring Boot v3.5.7, Spring v6.2.12","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:28.256448216Z","@version":"1","level":"INFO","message":"The following 1 profile is active: \"local\"","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.096912953Z","@version":"1","level":"INFO","message":"Bootstrapping Spring Data JPA repositories in DEFAULT mode.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.123747796Z","@version":"1","level":"INFO","message":"Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.391819029Z","@version":"1","level":"INFO","message":"Tomcat initialized with port 8085 (http)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.393213073Z","@version":"1","level":"INFO","message":"Starting service [Tomcat]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardService","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.393694491Z","@version":"1","level":"INFO","message":"Starting Servlet engine: [Apache Tomcat/10.1.48]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardEngine","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.420784331Z","@version":"1","level":"INFO","message":"Initializing Spring embedded WebApplicationContext","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.421267391Z","@version":"1","level":"INFO","message":"Root WebApplicationContext: initialization completed in 1161 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.s.c.ServletWebServerApplicationContext","thread":"restartedMain"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+{"@timestamp":"2025-12-24T18:43:29.59054385Z","@version":"1","level":"INFO","message":"HHH000204: Processing PersistenceUnitInfo [name: default]","correlationId":"","bookingId":"","txHash":"","logger":"o.h.jpa.internal.util.LogHelper","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.598254017Z","@version":"1","level":"INFO","message":"HHH000026: Second-level cache disabled","correlationId":"","bookingId":"","txHash":"","logger":"o.h.c.i.RegionFactoryInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.615087186Z","@version":"1","level":"INFO","message":"No LoadTimeWeaver setup: ignoring JPA class transformer","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.p.SpringPersistenceUnitInfo","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.617709947Z","@version":"1","level":"INFO","message":"HikariPool-3 - Starting...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.675986684Z","@version":"1","level":"INFO","message":"HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@76e5c765","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.pool.HikariPool","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.677681671Z","@version":"1","level":"INFO","message":"HikariPool-3 - Start completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.68382276Z","@version":"1","level":"WARN","message":"HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)","correlationId":"","bookingId":"","txHash":"","logger":"org.hibernate.orm.deprecation","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:29.687295836Z","@version":"1","level":"INFO","message":"HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 15.15\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown","correlationId":"","bookingId":"","txHash":"","logger":"o.hibernate.orm.connections.pooling","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.003259758Z","@version":"1","level":"INFO","message":"HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)","correlationId":"","bookingId":"","txHash":"","logger":"o.h.e.t.j.p.i.JtaPlatformInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.0301893Z","@version":"1","level":"INFO","message":"Initialized JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.417257432Z","@version":"1","level":"WARN","message":"spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.655892295Z","@version":"1","level":"INFO","message":"Exposing 3 endpoints beneath base path '/actuator'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.e.web.EndpointLinksResolver","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.688787547Z","@version":"1","level":"WARN","message":"\n\nUsing generated security password: 014aa89b-8ec8-4883-a96f-7af938d5873a\n\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.s.s.UserDetailsServiceAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.692010026Z","@version":"1","level":"INFO","message":"Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager","correlationId":"","bookingId":"","txHash":"","logger":"o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.922565492Z","@version":"1","level":"INFO","message":"H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/lotfi?sslmode=disable'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.h.H2ConsoleAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.932436688Z","@version":"1","level":"WARN","message":"Unable to start LiveReload server","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.OptionalLiveReloadServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.96285618Z","@version":"1","level":"INFO","message":"Tomcat started on port 8085 (http) with context path '/'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.965379799Z","@version":"1","level":"INFO","message":"Attempting to connect to: [localhost:5672]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:30.970943164Z","@version":"1","level":"INFO","message":"Created new connection: rabbitConnectionFactory#566c327e:0/SimpleConnection@390aa2fa [delegate=amqp://guest@127.0.0.1:5672/, localPort=60914]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:31.00599735Z","@version":"1","level":"INFO","message":"Started PaymentServiceApplication in 2.856 seconds (process running for 44.119)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:31.011535657Z","@version":"1","level":"INFO","message":"Condition evaluation unchanged","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.ConditionEvaluationDeltaLoggingListener","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:32.339789589Z","@version":"1","level":"INFO","message":"Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener","thread":"File Watcher"}
+{"@timestamp":"2025-12-24T18:43:32.343743566Z","@version":"1","level":"INFO","message":"Waiting for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:43:32.980518132Z","@version":"1","level":"INFO","message":"Successfully waited for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:43:32.980913817Z","@version":"1","level":"INFO","message":"Commencing graceful shutdown. Waiting for active requests to complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"Thread-9"}
+{"@timestamp":"2025-12-24T18:43:32.982091985Z","@version":"1","level":"INFO","message":"Graceful shutdown complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"tomcat-shutdown"}
+{"@timestamp":"2025-12-24T18:43:32.986187907Z","@version":"1","level":"INFO","message":"Closing JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"Thread-9"}
+{"@timestamp":"2025-12-24T18:43:32.987263817Z","@version":"1","level":"INFO","message":"HikariPool-3 - Shutdown initiated...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-9"}
+{"@timestamp":"2025-12-24T18:43:32.989740445Z","@version":"1","level":"INFO","message":"HikariPool-3 - Shutdown completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-9"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+{"@timestamp":"2025-12-24T18:43:33.127726577Z","@version":"1","level":"INFO","message":"Starting PaymentServiceApplication using Java 17.0.17 with PID 34770 (/home/medgm/vsc/Projet JEE/payment-service/target/classes started by medgm in /home/medgm/vsc/Projet JEE/payment-service)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.128485093Z","@version":"1","level":"DEBUG","message":"Running with Spring Boot v3.5.7, Spring v6.2.12","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.128998257Z","@version":"1","level":"INFO","message":"The following 1 profile is active: \"local\"","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.565517322Z","@version":"1","level":"INFO","message":"Bootstrapping Spring Data JPA repositories in DEFAULT mode.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.585310948Z","@version":"1","level":"INFO","message":"Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.809075964Z","@version":"1","level":"INFO","message":"Tomcat initialized with port 8085 (http)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.810180554Z","@version":"1","level":"INFO","message":"Starting service [Tomcat]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardService","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.810491214Z","@version":"1","level":"INFO","message":"Starting Servlet engine: [Apache Tomcat/10.1.48]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardEngine","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.834050696Z","@version":"1","level":"INFO","message":"Initializing Spring embedded WebApplicationContext","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.834404951Z","@version":"1","level":"INFO","message":"Root WebApplicationContext: initialization completed in 700 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.s.c.ServletWebServerApplicationContext","thread":"restartedMain"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+{"@timestamp":"2025-12-24T18:43:33.950749622Z","@version":"1","level":"INFO","message":"HHH000204: Processing PersistenceUnitInfo [name: default]","correlationId":"","bookingId":"","txHash":"","logger":"o.h.jpa.internal.util.LogHelper","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.95447094Z","@version":"1","level":"INFO","message":"HHH000026: Second-level cache disabled","correlationId":"","bookingId":"","txHash":"","logger":"o.h.c.i.RegionFactoryInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.965760976Z","@version":"1","level":"INFO","message":"No LoadTimeWeaver setup: ignoring JPA class transformer","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.p.SpringPersistenceUnitInfo","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.967047941Z","@version":"1","level":"INFO","message":"HikariPool-4 - Starting...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.99393103Z","@version":"1","level":"INFO","message":"HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@28ef38e","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.pool.HikariPool","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.994216723Z","@version":"1","level":"INFO","message":"HikariPool-4 - Start completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.997400484Z","@version":"1","level":"WARN","message":"HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)","correlationId":"","bookingId":"","txHash":"","logger":"org.hibernate.orm.deprecation","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:33.999880863Z","@version":"1","level":"INFO","message":"HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 15.15\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown","correlationId":"","bookingId":"","txHash":"","logger":"o.hibernate.orm.connections.pooling","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.110468352Z","@version":"1","level":"INFO","message":"HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)","correlationId":"","bookingId":"","txHash":"","logger":"o.h.e.t.j.p.i.JtaPlatformInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.126312611Z","@version":"1","level":"INFO","message":"Initialized JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.351364033Z","@version":"1","level":"WARN","message":"spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.528497545Z","@version":"1","level":"INFO","message":"Exposing 3 endpoints beneath base path '/actuator'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.e.web.EndpointLinksResolver","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.558019354Z","@version":"1","level":"WARN","message":"\n\nUsing generated security password: dc5dfb87-56de-4717-a30f-244205efab16\n\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.s.s.UserDetailsServiceAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.559612642Z","@version":"1","level":"INFO","message":"Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager","correlationId":"","bookingId":"","txHash":"","logger":"o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.750016298Z","@version":"1","level":"INFO","message":"H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/lotfi?sslmode=disable'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.h.H2ConsoleAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.763847577Z","@version":"1","level":"WARN","message":"Unable to start LiveReload server","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.OptionalLiveReloadServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.808009278Z","@version":"1","level":"INFO","message":"Tomcat started on port 8085 (http) with context path '/'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.809881399Z","@version":"1","level":"INFO","message":"Attempting to connect to: [localhost:5672]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.81696784Z","@version":"1","level":"INFO","message":"Created new connection: rabbitConnectionFactory#59392c50:0/SimpleConnection@33a90372 [delegate=amqp://guest@127.0.0.1:5672/, localPort=60926]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.857015997Z","@version":"1","level":"INFO","message":"Started PaymentServiceApplication in 1.771 seconds (process running for 47.97)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:34.863512552Z","@version":"1","level":"INFO","message":"Condition evaluation unchanged","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.ConditionEvaluationDeltaLoggingListener","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:43:38.951286851Z","@version":"1","level":"INFO","message":"Initializing Spring DispatcherServlet 'dispatcherServlet'","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"http-nio-8085-exec-1"}
+{"@timestamp":"2025-12-24T18:43:38.951582993Z","@version":"1","level":"INFO","message":"Initializing Servlet 'dispatcherServlet'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.web.servlet.DispatcherServlet","thread":"http-nio-8085-exec-1"}
+{"@timestamp":"2025-12-24T18:43:38.953348562Z","@version":"1","level":"INFO","message":"Completed initialization in 2 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.web.servlet.DispatcherServlet","thread":"http-nio-8085-exec-1"}
+DEBUG: getBookingDetails called for id: 4
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.check_in_date,
+        b1_0.check_out_date,
+        b1_0.created_at,
+        b1_0.long_stay_discount_percent,
+        b1_0.negotiation_expires_at,
+        b1_0.on_chain_tx_hash,
+        b1_0.property_id,
+        b1_0.requested_negotiation_percent,
+        b1_0.status,
+        b1_0.total_price,
+        b1_0.updated_at,
+        b1_0.user_id 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+DEBUG: Booking found: Booking(id=4, userId=4, propertyId=prop-casa-001, checkInDate=2025-12-24, checkOutDate=2025-12-27, onChainTxHash=null, status=PENDING_PAYMENT, totalPrice=1350.0, createdAt=2025-12-24T18:31:09.205089Z, updatedAt=2025-12-24T18:31:09.205090Z, longStayDiscountPercent=0, requestedNegotiationPercent=null, negotiationExpiresAt=null)
+DEBUG: Fetching property: prop-casa-001
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.bathrooms,
+        p1_0.bedrooms,
+        p1_0.capacity,
+        p1_0.city,
+        p1_0.country,
+        p1_0.daily_price,
+        p1_0.deposit_amount,
+        p1_0.description,
+        p1_0.latitude,
+        p1_0.longitude,
+        p1_0.max_negotiation_percent,
+        p1_0.negotiation_percentage,
+        p1_0.number_of_bathrooms,
+        p1_0.number_of_bedrooms,
+        p1_0.number_of_beds,
+        p1_0.price,
+        p1_0.status,
+        p1_0.title,
+        p1_0.user_id 
+    from
+        properties p1_0 
+    where
+        p1_0.id=?
+DEBUG: Property response: {depositAmount=200.0, dailyPrice=450.0, country=Morocco, isAvailable=true, negotiationPercentage=10.0, address=null, city=Casablanca, latitude=33.5928, description=Modern apartment in central Casablanca, close to tram and business district., numberOfBeds=3, title=Modern Business Apartment - Casablanca, userId=2, discountEnabled=false, capacity=4, isNegotiable=true, id=prop-casa-001, numberOfBedrooms=2, maxNegotiationPercent=null, numberOfBathrooms=1, longitude=-7.6192}
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+DEBUG: Returning response: BookingDetailsResponse(bookingId=4, status=PENDING_PAYMENT, totalPrice=1350.0, checkInDate=2025-12-24, checkOutDate=2025-12-27, propertyId=prop-casa-001, propertyTitle=Modern Business Apartment - Casablanca, propertyPrice=450.0, ownerWalletAddress=0xHOST, userId=4, currentUserId=4, userFirstName=MedGM, userLastName=Host, userEmail=nitixaj335@roratu.com, userWalletAddress=0xMEDGM)
+DEBUG: getBookingDetails called for id: 4
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.check_in_date,
+        b1_0.check_out_date,
+        b1_0.created_at,
+        b1_0.long_stay_discount_percent,
+        b1_0.negotiation_expires_at,
+        b1_0.on_chain_tx_hash,
+        b1_0.property_id,
+        b1_0.requested_negotiation_percent,
+        b1_0.status,
+        b1_0.total_price,
+        b1_0.updated_at,
+        b1_0.user_id 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+DEBUG: Booking found: Booking(id=4, userId=4, propertyId=prop-casa-001, checkInDate=2025-12-24, checkOutDate=2025-12-27, onChainTxHash=null, status=PENDING_PAYMENT, totalPrice=1350.0, createdAt=2025-12-24T18:31:09.205089Z, updatedAt=2025-12-24T18:31:09.205090Z, longStayDiscountPercent=0, requestedNegotiationPercent=null, negotiationExpiresAt=null)
+DEBUG: Fetching property: prop-casa-001
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.bathrooms,
+        p1_0.bedrooms,
+        p1_0.capacity,
+        p1_0.city,
+        p1_0.country,
+        p1_0.daily_price,
+        p1_0.deposit_amount,
+        p1_0.description,
+        p1_0.latitude,
+        p1_0.longitude,
+        p1_0.max_negotiation_percent,
+        p1_0.negotiation_percentage,
+        p1_0.number_of_bathrooms,
+        p1_0.number_of_bedrooms,
+        p1_0.number_of_beds,
+        p1_0.price,
+        p1_0.status,
+        p1_0.title,
+        p1_0.user_id 
+    from
+        properties p1_0 
+    where
+        p1_0.id=?
+DEBUG: Property response: {depositAmount=200.0, dailyPrice=450.0, country=Morocco, isAvailable=true, negotiationPercentage=10.0, address=null, city=Casablanca, latitude=33.5928, description=Modern apartment in central Casablanca, close to tram and business district., numberOfBeds=3, title=Modern Business Apartment - Casablanca, userId=2, discountEnabled=false, capacity=4, isNegotiable=true, id=prop-casa-001, numberOfBedrooms=2, maxNegotiationPercent=null, numberOfBathrooms=1, longitude=-7.6192}
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+DEBUG: Returning response: BookingDetailsResponse(bookingId=4, status=PENDING_PAYMENT, totalPrice=1350.0, checkInDate=2025-12-24, checkOutDate=2025-12-27, propertyId=prop-casa-001, propertyTitle=Modern Business Apartment - Casablanca, propertyPrice=450.0, ownerWalletAddress=0xHOST, userId=4, currentUserId=4, userFirstName=MedGM, userLastName=Host, userEmail=nitixaj335@roratu.com, userWalletAddress=0xMEDGM)
+DEBUG: getBookingDetails called for id: 4
+Hibernate: 
+    select
+        b1_0.id,
+        b1_0.check_in_date,
+        b1_0.check_out_date,
+        b1_0.created_at,
+        b1_0.long_stay_discount_percent,
+        b1_0.negotiation_expires_at,
+        b1_0.on_chain_tx_hash,
+        b1_0.property_id,
+        b1_0.requested_negotiation_percent,
+        b1_0.status,
+        b1_0.total_price,
+        b1_0.updated_at,
+        b1_0.user_id 
+    from
+        bookings b1_0 
+    where
+        b1_0.id=?
+DEBUG: Booking found: Booking(id=4, userId=4, propertyId=prop-casa-001, checkInDate=2025-12-24, checkOutDate=2025-12-27, onChainTxHash=null, status=PENDING_PAYMENT, totalPrice=1350.0, createdAt=2025-12-24T18:31:09.205089Z, updatedAt=2025-12-24T18:31:09.205090Z, longStayDiscountPercent=0, requestedNegotiationPercent=null, negotiationExpiresAt=null)
+DEBUG: Fetching property: prop-casa-001
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.address,
+        p1_0.bathrooms,
+        p1_0.bedrooms,
+        p1_0.capacity,
+        p1_0.city,
+        p1_0.country,
+        p1_0.daily_price,
+        p1_0.deposit_amount,
+        p1_0.description,
+        p1_0.latitude,
+        p1_0.longitude,
+        p1_0.max_negotiation_percent,
+        p1_0.negotiation_percentage,
+        p1_0.number_of_bathrooms,
+        p1_0.number_of_bedrooms,
+        p1_0.number_of_beds,
+        p1_0.price,
+        p1_0.status,
+        p1_0.title,
+        p1_0.user_id 
+    from
+        properties p1_0 
+    where
+        p1_0.id=?
+DEBUG: Property response: {depositAmount=200.0, dailyPrice=450.0, country=Morocco, isAvailable=true, negotiationPercentage=10.0, address=null, city=Casablanca, latitude=33.5928, description=Modern apartment in central Casablanca, close to tram and business district., numberOfBeds=3, title=Modern Business Apartment - Casablanca, userId=2, discountEnabled=false, capacity=4, isNegotiable=true, id=prop-casa-001, numberOfBedrooms=2, maxNegotiationPercent=null, numberOfBathrooms=1, longitude=-7.6192}
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+Hibernate: 
+    select
+        ua1_0.id,
+        ua1_0.birthday,
+        ua1_0.email,
+        ua1_0.first_name,
+        ua1_0.is_enabled,
+        ua1_0.is_suspended,
+        ua1_0.last_name,
+        ua1_0.password,
+        ua1_0.penalty_points,
+        ua1_0.personal_id,
+        ua1_0.phone_number,
+        ua1_0.score,
+        ua1_0.suspension_reason,
+        ua1_0.suspension_until,
+        ua1_0.wallet_address 
+    from
+        users ua1_0 
+    where
+        ua1_0.id=?
+DEBUG: Returning response: BookingDetailsResponse(bookingId=4, status=PENDING_PAYMENT, totalPrice=1350.0, checkInDate=2025-12-24, checkOutDate=2025-12-27, propertyId=prop-casa-001, propertyTitle=Modern Business Apartment - Casablanca, propertyPrice=450.0, ownerWalletAddress=0xHOST, userId=4, currentUserId=4, userFirstName=MedGM, userLastName=Host, userEmail=nitixaj335@roratu.com, userWalletAddress=0xMEDGM)
+{"@timestamp":"2025-12-24T18:44:33.317958193Z","@version":"1","level":"INFO","message":"Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener","thread":"File Watcher"}
+{"@timestamp":"2025-12-24T18:44:33.321125058Z","@version":"1","level":"INFO","message":"Waiting for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:44:33.843678522Z","@version":"1","level":"INFO","message":"Successfully waited for workers to finish.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.l.SimpleMessageListenerContainer","thread":"org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2"}
+{"@timestamp":"2025-12-24T18:44:33.844427897Z","@version":"1","level":"INFO","message":"Commencing graceful shutdown. Waiting for active requests to complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"Thread-13"}
+{"@timestamp":"2025-12-24T18:44:33.847176764Z","@version":"1","level":"INFO","message":"Graceful shutdown complete","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.GracefulShutdown","thread":"tomcat-shutdown"}
+{"@timestamp":"2025-12-24T18:44:33.856123215Z","@version":"1","level":"INFO","message":"Closing JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"Thread-13"}
+{"@timestamp":"2025-12-24T18:44:33.857656825Z","@version":"1","level":"INFO","message":"HikariPool-4 - Shutdown initiated...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-13"}
+{"@timestamp":"2025-12-24T18:44:33.865075248Z","@version":"1","level":"INFO","message":"HikariPool-4 - Shutdown completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"Thread-13"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+{"@timestamp":"2025-12-24T18:44:34.140300383Z","@version":"1","level":"INFO","message":"Starting PaymentServiceApplication using Java 17.0.17 with PID 34770 (/home/medgm/vsc/Projet JEE/payment-service/target/classes started by medgm in /home/medgm/vsc/Projet JEE/payment-service)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.141028045Z","@version":"1","level":"DEBUG","message":"Running with Spring Boot v3.5.7, Spring v6.2.12","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.14130323Z","@version":"1","level":"INFO","message":"The following 1 profile is active: \"local\"","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.590749017Z","@version":"1","level":"INFO","message":"Bootstrapping Spring Data JPA repositories in DEFAULT mode.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.604582436Z","@version":"1","level":"INFO","message":"Finished Spring Data repository scanning in 12 ms. Found 4 JPA repository interfaces.","correlationId":"","bookingId":"","txHash":"","logger":"o.s.d.r.c.RepositoryConfigurationDelegate","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.823333908Z","@version":"1","level":"INFO","message":"Tomcat initialized with port 8085 (http)","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.824547201Z","@version":"1","level":"INFO","message":"Starting service [Tomcat]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardService","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.824916704Z","@version":"1","level":"INFO","message":"Starting Servlet engine: [Apache Tomcat/10.1.48]","correlationId":"","bookingId":"","txHash":"","logger":"o.a.catalina.core.StandardEngine","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.851355405Z","@version":"1","level":"INFO","message":"Initializing Spring embedded WebApplicationContext","correlationId":"","bookingId":"","txHash":"","logger":"o.a.c.c.C.[Tomcat].[localhost].[/]","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.851659701Z","@version":"1","level":"INFO","message":"Root WebApplicationContext: initialization completed in 708 ms","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.s.c.ServletWebServerApplicationContext","thread":"restartedMain"}
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+{"@timestamp":"2025-12-24T18:44:34.995603053Z","@version":"1","level":"INFO","message":"HHH000204: Processing PersistenceUnitInfo [name: default]","correlationId":"","bookingId":"","txHash":"","logger":"o.h.jpa.internal.util.LogHelper","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:34.998458182Z","@version":"1","level":"INFO","message":"HHH000026: Second-level cache disabled","correlationId":"","bookingId":"","txHash":"","logger":"o.h.c.i.RegionFactoryInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.012930832Z","@version":"1","level":"INFO","message":"No LoadTimeWeaver setup: ignoring JPA class transformer","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.p.SpringPersistenceUnitInfo","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.014743097Z","@version":"1","level":"INFO","message":"HikariPool-5 - Starting...","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.05279964Z","@version":"1","level":"INFO","message":"HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@5f701ed5","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.pool.HikariPool","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.053528002Z","@version":"1","level":"INFO","message":"HikariPool-5 - Start completed.","correlationId":"","bookingId":"","txHash":"","logger":"com.zaxxer.hikari.HikariDataSource","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.057926631Z","@version":"1","level":"WARN","message":"HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)","correlationId":"","bookingId":"","txHash":"","logger":"org.hibernate.orm.deprecation","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.059732447Z","@version":"1","level":"INFO","message":"HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 15.15\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown","correlationId":"","bookingId":"","txHash":"","logger":"o.hibernate.orm.connections.pooling","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.162363761Z","@version":"1","level":"INFO","message":"HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)","correlationId":"","bookingId":"","txHash":"","logger":"o.h.e.t.j.p.i.JtaPlatformInitiator","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.18301596Z","@version":"1","level":"INFO","message":"Initialized JPA EntityManagerFactory for persistence unit 'default'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.o.j.LocalContainerEntityManagerFactoryBean","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.47510047Z","@version":"1","level":"WARN","message":"spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.685764757Z","@version":"1","level":"INFO","message":"Exposing 3 endpoints beneath base path '/actuator'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.e.web.EndpointLinksResolver","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.722622891Z","@version":"1","level":"WARN","message":"\n\nUsing generated security password: c95d1d1c-9190-4654-90f5-934e4bc71fae\n\nThis generated password is for development use only. Your security configuration must be updated before running your application in production.\n","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.s.s.UserDetailsServiceAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.725487377Z","@version":"1","level":"INFO","message":"Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager","correlationId":"","bookingId":"","txHash":"","logger":"o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.944748016Z","@version":"1","level":"INFO","message":"H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/lotfi?sslmode=disable'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.a.h.H2ConsoleAutoConfiguration","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.956094725Z","@version":"1","level":"WARN","message":"Unable to start LiveReload server","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.OptionalLiveReloadServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.985993737Z","@version":"1","level":"INFO","message":"Tomcat started on port 8085 (http) with context path '/'","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.w.e.tomcat.TomcatWebServer","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.987746023Z","@version":"1","level":"INFO","message":"Attempting to connect to: [localhost:5672]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:35.996225143Z","@version":"1","level":"INFO","message":"Created new connection: rabbitConnectionFactory#3f2b0c0f:0/SimpleConnection@560a717e [delegate=amqp://guest@127.0.0.1:5672/, localPort=48534]","correlationId":"","bookingId":"","txHash":"","logger":"o.s.a.r.c.CachingConnectionFactory","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:36.048469567Z","@version":"1","level":"INFO","message":"Started PaymentServiceApplication in 1.977 seconds (process running for 109.161)","correlationId":"","bookingId":"","txHash":"","logger":"m.f.p.PaymentServiceApplication","thread":"restartedMain"}
+{"@timestamp":"2025-12-24T18:44:36.054934457Z","@version":"1","level":"INFO","message":"Condition evaluation unchanged","correlationId":"","bookingId":"","txHash":"","logger":"o.s.b.d.a.ConditionEvaluationDeltaLoggingListener","thread":"restartedMain"}
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  03:19 min
+[[1;34mINFO[m] Finished at: 2025-12-24T19:46:03+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.springframework.boot:spring-boot-maven-plugin:3.5.7:run[m [1m(default-cli)[m on project [36mpayments-svc[m: [1;31mProcess terminated with exit code: 137[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

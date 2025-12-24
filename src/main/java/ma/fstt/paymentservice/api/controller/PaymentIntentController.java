@@ -50,8 +50,8 @@ public class PaymentIntentController {
         try {
             MDC.put("bookingId", String.valueOf(request.getBookingId()));
 
-            PaymentOrchestrator.PaymentIntentResponse orchestratorResponse =
-                    paymentOrchestrator.createPaymentIntent(request);
+            PaymentOrchestrator.PaymentIntentResponse orchestratorResponse = paymentOrchestrator
+                    .createPaymentIntent(request);
 
             PaymentIntentResponse response = PaymentIntentResponse.builder()
                     .referenceId(orchestratorResponse.getReferenceId())
@@ -75,8 +75,9 @@ public class PaymentIntentController {
 
             Booking booking = bookingRepository.findById(bookingId)
                     .orElseThrow(() -> {
-                        return new BusinessException("BOOKING_NOT_FOUND", 
-                            "Booking with ID " + bookingId + " not found. Please make sure the booking exists in the database.");
+                        return new BusinessException("BOOKING_NOT_FOUND",
+                                "Booking with ID " + bookingId
+                                        + " not found. Please make sure the booking exists in the database.");
                     });
 
             if (booking.getPropertyId() == null) {
@@ -84,7 +85,7 @@ public class PaymentIntentController {
             }
 
             String propertyIdStr = booking.getPropertyId();
-            
+
             Map<String, Object> propertyResponse;
             try {
                 propertyResponse = propertyDatabaseService.getPropertyById(propertyIdStr);
@@ -92,21 +93,21 @@ public class PaymentIntentController {
                 throw e;
             } catch (Exception e) {
                 String errorMessage = e.getMessage();
-                throw new BusinessException("DATABASE_ERROR", 
-                    String.format("Error fetching property '%s' from database: %s", 
-                        propertyIdStr, errorMessage));
+                throw new BusinessException("DATABASE_ERROR",
+                        String.format("Error fetching property '%s' from database: %s",
+                                propertyIdStr, errorMessage));
             }
-            
+
             if (propertyResponse == null) {
-                throw new BusinessException("PROPERTY_NOT_FOUND", 
-                    "Property with ID " + propertyIdStr + " not found in database (null response)");
+                throw new BusinessException("PROPERTY_NOT_FOUND",
+                        "Property with ID " + propertyIdStr + " not found in database (null response)");
             }
-            
+
             String ownerUserIdStr = propertyDatabaseService.extractOwnerUserId(propertyResponse);
-            String propertyTitle = propertyResponse.containsKey("title") ? 
-                propertyResponse.get("title").toString() : propertyIdStr;
+            String propertyTitle = propertyResponse.containsKey("title") ? propertyResponse.get("title").toString()
+                    : propertyIdStr;
             Double propertyPrice = propertyDatabaseService.extractDailyPrice(propertyResponse);
-            
+
             Long ownerId = null;
             if (ownerUserIdStr != null && !ownerUserIdStr.trim().isEmpty()) {
                 try {
@@ -126,29 +127,29 @@ public class PaymentIntentController {
 
             String ownerWalletAddress = ownerAccount != null ? ownerAccount.getWalletAddress() : null;
             String userWalletAddress = userAccount != null ? userAccount.getWalletAddress() : null;
-            
+
             if (ownerWalletAddress != null) {
                 ownerWalletAddress = ownerWalletAddress.trim();
                 if (ownerWalletAddress.isEmpty()) {
                     ownerWalletAddress = null;
                 }
             }
-            
+
             if (userWalletAddress != null) {
                 userWalletAddress = userWalletAddress.trim();
                 if (userWalletAddress.isEmpty()) {
                     userWalletAddress = null;
                 }
             }
-            
-            if (ownerWalletAddress == null || ownerWalletAddress.trim().isEmpty() || ownerWalletAddress.equalsIgnoreCase("null")) {
+
+            if (ownerWalletAddress == null || ownerWalletAddress.trim().isEmpty() ||
+                    ownerWalletAddress.equalsIgnoreCase("null")) {
                 String errorMessage = String.format(
-                    "Property owner wallet address is missing. " +
-                    "Property ID: %s, Owner userId from property-service: '%s', Owner ID (Long): %s. " +
-                    "Please ensure: 1) Property owner has set their wallet address in payment-service, " +
-                    "2) userId in property-service matches id in payment-service users table.",
-                    propertyIdStr, ownerUserIdStr, ownerId
-                );
+                        "Property owner wallet address is missing. " +
+                                "Property ID: %s, Owner userId from property-service: '%s', Owner ID (Long): %s. " +
+                                "Please ensure: 1) Property owner has set their wallet address in payment-service, " +
+                                "2) userId in property-service matches id in payment-service users table.",
+                        propertyIdStr, ownerUserIdStr, ownerId);
                 throw new BusinessException("OWNER_WALLET_ADDRESS_MISSING", errorMessage);
             }
 
@@ -174,8 +175,8 @@ public class PaymentIntentController {
         } catch (BusinessException e) {
             throw e;
         } catch (Exception e) {
-            throw new BusinessException("INTERNAL_ERROR", 
-                "An error occurred while fetching booking details: " + e.getMessage());
+            throw new BusinessException("INTERNAL_ERROR",
+                    "An error occurred while fetching booking details: " + e.getMessage());
         } finally {
             MDC.clear();
         }
@@ -185,16 +186,16 @@ public class PaymentIntentController {
     public ResponseEntity<Map<String, Object>> getBookingId() {
         try {
             Long lastBookingId = bookingCreatedConsumer.getLastReceivedBookingId();
-            
+
             if (lastBookingId != null) {
                 Map<String, Object> response = new HashMap<>();
                 response.put("bookingId", lastBookingId);
                 response.put("status", "success");
                 return ResponseEntity.ok(response);
             }
-            
+
             Long bookingId = bookingCreatedConsumer.pollBookingId(5, TimeUnit.SECONDS);
-            
+
             if (bookingId != null) {
                 Map<String, Object> response = new HashMap<>();
                 response.put("bookingId", bookingId);
@@ -247,8 +248,8 @@ public class PaymentIntentController {
                 isNegotiable = Boolean.TRUE.equals(propertyResponse.get("isNegotiable"));
             }
 
-            boolean discountEnabled = propertyResponse.containsKey("discountEnabled") && 
-                Boolean.TRUE.equals(propertyResponse.get("discountEnabled"));
+            boolean discountEnabled = propertyResponse.containsKey("discountEnabled") &&
+                    Boolean.TRUE.equals(propertyResponse.get("discountEnabled"));
 
             Double dailyPrice = propertyDatabaseService.extractDailyPrice(propertyResponse);
 
@@ -277,7 +278,8 @@ public class PaymentIntentController {
             MDC.put("currentUserId", String.valueOf(request.getUserId()));
 
             UserAccount user = userAccountRepository.findById(request.getUserId())
-                    .orElseThrow(() -> new BusinessException("USER_NOT_FOUND", "User not found: " + request.getUserId()));
+                    .orElseThrow(
+                            () -> new BusinessException("USER_NOT_FOUND", "User not found: " + request.getUserId()));
 
             user.setWalletAddress(request.getWalletAddress());
             userAccountRepository.save(user);
@@ -289,13 +291,15 @@ public class PaymentIntentController {
     }
 
     @PutMapping("/booking/{bookingId}/tx-hash")
-    public ResponseEntity<Void> updateTransactionHash(@PathVariable Long bookingId, @RequestBody java.util.Map<String, String> request) {
+    public ResponseEntity<Void> updateTransactionHash(@PathVariable Long bookingId,
+            @RequestBody java.util.Map<String, String> request) {
         try {
             MDC.put("bookingId", String.valueOf(bookingId));
             String txHash = request.get("txHash");
 
             TransactionRecord transaction = transactionRepository.findFirstByBookingIdOrderByCreatedAtDesc(bookingId)
-                    .orElseThrow(() -> new BusinessException("TRANSACTION_NOT_FOUND", "Transaction not found for booking: " + bookingId));
+                    .orElseThrow(() -> new BusinessException("TRANSACTION_NOT_FOUND",
+                            "Transaction not found for booking: " + bookingId));
 
             transaction.setTxHash(txHash);
             transaction.setStatus(ma.fstt.paymentservice.domain.entity.enums.TransactionStatusEnum.SUCCESS);
@@ -304,21 +308,19 @@ public class PaymentIntentController {
             try {
                 Booking booking = bookingRepository.findById(bookingId)
                         .orElse(null);
-                
-                if (booking != null && (
-                    "PENDING_PAYMENT".equals(booking.getStatus()) ||
-                    "PENDING_NEGOTIATION".equals(booking.getStatus()) ||
-                    "PENDING".equals(booking.getStatus())
-                )) {
+
+                if (booking != null && ("PENDING_PAYMENT".equals(booking.getStatus()) ||
+                        "PENDING_NEGOTIATION".equals(booking.getStatus()) ||
+                        "PENDING".equals(booking.getStatus()))) {
                     String previousStatus = booking.getStatus();
                     booking.setStatus("CONFIRMED");
                     bookingRepository.save(booking);
-                    
+
                     try {
                         paymentOrchestrator.cancelOverlappingBookings(bookingId);
                     } catch (Exception e) {
                     }
-                    
+
                     updateBookingStatusInBookingService(bookingId, "CONFIRMED");
                 } else if (booking != null) {
                     if (!"CONFIRMED".equals(booking.getStatus())) {
@@ -347,17 +349,16 @@ public class PaymentIntentController {
             }
 
             RestTemplate restTemplate = new RestTemplate();
-            org.springframework.http.client.SimpleClientHttpRequestFactory factory = 
-                    new org.springframework.http.client.SimpleClientHttpRequestFactory();
+            org.springframework.http.client.SimpleClientHttpRequestFactory factory = new org.springframework.http.client.SimpleClientHttpRequestFactory();
             factory.setConnectTimeout(5000);
             factory.setReadTimeout(5000);
             restTemplate.setRequestFactory(factory);
-            
+
             String url = bookingServiceUrl + "/api/bookings/" + bookingId + "/status";
-            
+
             Map<String, String> statusUpdate = new HashMap<>();
             statusUpdate.put("status", status);
-            
+
             restTemplate.put(url, statusUpdate);
         } catch (Exception e) {
         }
@@ -377,8 +378,7 @@ public class PaymentIntentController {
                     request.getRecipientAddress(),
                     refundAmountWei,
                     penaltyAmountWei,
-                    request.isRefundFromRent()
-            );
+                    request.isRefundFromRent());
 
             response.put("status", "success");
             response.put("message", "Reclamation refund processed successfully");
@@ -400,9 +400,9 @@ public class PaymentIntentController {
         try {
             Long bookingId = Long.valueOf(request.get("bookingId").toString());
             Boolean active = Boolean.valueOf(request.get("active").toString());
-            
+
             String txHash = contractService.setActiveReclamation(bookingId, active);
-            
+
             response.put("status", "success");
             response.put("message", "Active reclamation status updated");
             response.put("txHash", txHash);
@@ -427,8 +427,7 @@ public class PaymentIntentController {
                     bookingId,
                     recipientAddress,
                     refundAmountWei,
-                    refundFromRent
-            );
+                    refundFromRent);
 
             response.put("status", "success");
             response.put("message", "Partial refund processed successfully");
