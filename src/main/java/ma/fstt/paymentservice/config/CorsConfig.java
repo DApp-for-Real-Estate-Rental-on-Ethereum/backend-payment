@@ -1,26 +1,11 @@
 package ma.fstt.paymentservice.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+// CORS is handled by the API Gateway - no need to configure here
+// Removing CORS config to prevent duplicate headers
 
 @Configuration
 public class CorsConfig {
-
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOriginPatterns("*") // Use allowedOriginPatterns instead of allowedOrigins for better compatibility
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
-                        .allowedHeaders("*")
-                        .allowCredentials(true) // Allow credentials for authentication
-                        .maxAge(3600);
-            }
-        };
-    }
+    // Empty - CORS handled by Gateway
 }
-
