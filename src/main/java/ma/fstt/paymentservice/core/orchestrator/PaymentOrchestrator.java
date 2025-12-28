@@ -39,6 +39,7 @@ public class PaymentOrchestrator {
     private String contractAddress;
 
     private static final Long CHAIN_ID = 31337L;
+    private static final BigDecimal MAD_TO_ETH_RATE = BigDecimal.valueOf(35000);
 
     @Transactional
     public PaymentIntentResponse createPaymentIntent(PaymentIntentRequest request) {
@@ -59,7 +60,7 @@ public class PaymentOrchestrator {
 
             String propertyIdStr = booking.getPropertyId();
             Map<String, Object> propertyResponse = propertyDatabaseService.getPropertyById(propertyIdStr);
-            
+
             if (propertyResponse == null) {
                 throw new BusinessException("PROPERTY_NOT_FOUND", "Property not found in database: " + propertyIdStr);
             }
@@ -73,34 +74,39 @@ public class PaymentOrchestrator {
             try {
                 ownerId = Long.parseLong(ownerUserIdStr);
             } catch (NumberFormatException e) {
-                throw new BusinessException("INVALID_OWNER_ID", 
-                    "Property owner userId '" + ownerUserIdStr + "' cannot be converted to Long. " +
-                    "userId in property-service must match id in payment-service users table.");
+                throw new BusinessException("INVALID_OWNER_ID",
+                        "Property owner userId '" + ownerUserIdStr + "' cannot be converted to Long. " +
+                                "userId in property-service must match id in payment-service users table.");
             }
 
             UserAccount owner = userAccountRepository.findById(ownerId)
-                    .orElseThrow(() -> new BusinessException("OWNER_NOT_FOUND", 
-                        "Property owner not found in payment-service users table with id: " + ownerId));
+                    .orElseThrow(() -> new BusinessException("OWNER_NOT_FOUND",
+                            "Property owner not found in payment-service users table with id: " + ownerId));
 
             if (owner.getWalletAddress() == null || owner.getWalletAddress().trim().isEmpty()) {
-                throw new BusinessException("WALLET_ADDRESS_MISSING", "Property owner does not have a wallet address configured");
+                throw new BusinessException("WALLET_ADDRESS_MISSING",
+                        "Property owner does not have a wallet address configured");
             }
 
             if (booking.getTotalPrice() == null) {
-                throw new BusinessException("BOOKING_PRICE_MISSING", "Booking total price is not set in database. Booking ID: " + bookingId);
+                throw new BusinessException("BOOKING_PRICE_MISSING",
+                        "Booking total price is not set in database. Booking ID: " + bookingId);
             }
 
             BigDecimal total = BigDecimal.valueOf(booking.getTotalPrice());
 
             if (total.compareTo(BigDecimal.ZERO) <= 0) {
-                throw new BusinessException("INVALID_BOOKING_PRICE", "Booking total price must be greater than zero. Current value: " + total);
+                throw new BusinessException("INVALID_BOOKING_PRICE",
+                        "Booking total price must be greater than zero. Current value: " + total);
             }
 
             UserAccount guest = userAccountRepository.findById(booking.getUserId())
-                    .orElseThrow(() -> new BusinessException("GUEST_NOT_FOUND", "Guest not found: " + booking.getUserId()));
+                    .orElseThrow(
+                            () -> new BusinessException("GUEST_NOT_FOUND", "Guest not found: " + booking.getUserId()));
 
             if (guest.getWalletAddress() == null || guest.getWalletAddress().trim().isEmpty()) {
-                throw new BusinessException("WALLET_ADDRESS_MISSING", "Guest does not have a wallet address configured");
+                throw new BusinessException("WALLET_ADDRESS_MISSING",
+                        "Guest does not have a wallet address configured");
             }
 
             Double depositAmount = getDepositAmountFromProperty(propertyIdStr);
@@ -111,8 +117,17 @@ public class PaymentOrchestrator {
             BigDecimal deposit = BigDecimal.valueOf(depositAmount);
             BigDecimal rentAmount = total;
 
-            BigInteger rentAmountWei = rentAmount.multiply(BigDecimal.valueOf(1_000_000_000_000_000_000L)).toBigInteger();
-            BigInteger depositAmountWei = deposit.multiply(BigDecimal.valueOf(1_000_000_000_000_000_000L)).toBigInteger();
+            // Convert MAD to ETH
+            BigDecimal rentAmountEth = rentAmount.divide(MAD_TO_ETH_RATE, 18, java.math.RoundingMode.HALF_UP);
+            BigDecimal depositAmountEth = deposit.divide(MAD_TO_ETH_RATE, 18, java.math.RoundingMode.HALF_UP);
+
+            BigInteger rentAmountWei = rentAmountEth.multiply(BigDecimal.valueOf(1_000_000_000_000_000_000L))
+                    .toBigInteger();
+            BigInteger depositAmountWei = depositAmountEth.multiply(BigDecimal.valueOf(1_000_000_000_000_000_000L))
+                    .toBigInteger();
+
+            // Calculate total Wei for value field
+            BigInteger totalAmountWei = rentAmountWei.add(depositAmountWei);
 
             String contractAddress = getContractAddress();
             String functionData = null;
@@ -123,28 +138,27 @@ public class PaymentOrchestrator {
                             owner.getWalletAddress(),
                             guest.getWalletAddress(),
                             rentAmountWei,
-                            depositAmountWei
-                    );
+                            depositAmountWei);
                 } catch (Exception e) {
                 }
             }
 
             BigDecimal totalWithDeposit = total.add(deposit);
-            
+
             return createAndPersistTx(
                     bookingId,
-                    booking.getUserId(), 
+                    booking.getUserId(),
                     totalWithDeposit,
                     contractAddress != null && !contractAddress.isEmpty() ? contractAddress : owner.getWalletAddress(),
-                    functionData
-            );
+                    functionData,
+                    totalAmountWei);
         } finally {
             MDC.clear();
         }
     }
 
-    private PaymentIntentResponse createAndPersistTx(Long bookingId, Long userId, BigDecimal total, String toAddress, String functionData) {
-        BigInteger totalAmountWei = total.multiply(BigDecimal.valueOf(1_000_000_000_000_000_000L)).toBigInteger();
+    private PaymentIntentResponse createAndPersistTx(Long bookingId, Long userId, BigDecimal total, String toAddress,
+            String functionData, BigInteger totalAmountWei) {
         UUID referenceId = UUID.randomUUID();
 
         TransactionRecord tx = new TransactionRecord();
@@ -194,9 +208,10 @@ public class PaymentOrchestrator {
 
             if (booking.getPropertyId() != null) {
                 try {
-                    Map<String, Object> propertyResponse = propertyDatabaseService.getPropertyById(booking.getPropertyId());
+                    Map<String, Object> propertyResponse = propertyDatabaseService
+                            .getPropertyById(booking.getPropertyId());
                     String ownerWalletAddress = propertyDatabaseService.extractOwnerUserId(propertyResponse);
-                    
+
                     try {
                         Long ownerId = Long.parseLong(ownerWalletAddress);
                         UserAccount owner = userAccountRepository.findById(ownerId).orElse(null);
@@ -210,8 +225,8 @@ public class PaymentOrchestrator {
                 String fromAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
                 boolean exists = contractService.bookingExists(bookingId, fromAddress);
                 if (!exists) {
-                    throw new BusinessException("BOOKING_NOT_ON_BLOCKCHAIN", 
-                        "Booking " + bookingId + " does not exist on blockchain. Payment must be made first.");
+                    throw new BusinessException("BOOKING_NOT_ON_BLOCKCHAIN",
+                            "Booking " + bookingId + " does not exist on blockchain. Payment must be made first.");
                 }
             } catch (Exception e) {
             }
@@ -220,7 +235,7 @@ public class PaymentOrchestrator {
 
             TransactionRecord transaction = transactionRepository.findFirstByBookingIdOrderByCreatedAtDesc(bookingId)
                     .orElse(null);
-            
+
             if (transaction != null) {
                 transaction.setTxHash(txHash);
                 transaction.setStatus(TransactionStatusEnum.SUCCESS);
@@ -230,7 +245,8 @@ public class PaymentOrchestrator {
         } catch (BusinessException e) {
             throw e;
         } catch (Exception e) {
-            throw new BusinessException("BLOCKCHAIN_ERROR", "Failed to complete booking on blockchain: " + e.getMessage());
+            throw new BusinessException("BLOCKCHAIN_ERROR",
+                    "Failed to complete booking on blockchain: " + e.getMessage());
         } finally {
             MDC.clear();
         }
@@ -241,55 +257,54 @@ public class PaymentOrchestrator {
         try {
             Booking confirmedBooking = bookingRepository.findById(confirmedBookingId)
                     .orElse(null);
-            
+
             if (confirmedBooking == null) {
                 return;
             }
-            
+
             if (!"CONFIRMED".equals(confirmedBooking.getStatus())) {
                 return;
             }
-            
+
             String propertyId = confirmedBooking.getPropertyId();
             LocalDate checkIn = confirmedBooking.getCheckInDate();
             LocalDate checkOut = confirmedBooking.getCheckOutDate();
-            
+
             if (propertyId == null || checkIn == null || checkOut == null) {
                 return;
             }
-            
+
             List<Booking> allPropertyBookings = bookingRepository.findByPropertyId(propertyId);
-            
+
             List<Booking> overlappingBookings = bookingRepository.findOverlappingBookings(
-                    propertyId, 
-                    confirmedBookingId, 
-                    checkIn, 
-                    checkOut
-            );
-            
+                    propertyId,
+                    confirmedBookingId,
+                    checkIn,
+                    checkOut);
+
             overlappingBookings.removeIf(b -> {
                 boolean isConfirmed = b.getId().equals(confirmedBookingId);
                 return isConfirmed;
             });
-            
+
             if (overlappingBookings.isEmpty()) {
                 return;
             }
-            
+
             int deletedCount = 0;
             int skippedCount = 0;
             for (Booking overlappingBooking : overlappingBookings) {
                 if (overlappingBooking.getId().equals(confirmedBookingId)) {
                     continue;
                 }
-                
+
                 String previousStatus = overlappingBooking.getStatus();
-                
+
                 if ("COMPLETED".equals(previousStatus)) {
                     skippedCount++;
                     continue;
                 }
-                
+
                 try {
                     Long bookingIdToDelete = overlappingBooking.getId();
                     bookingRepository.delete(overlappingBooking);
@@ -297,7 +312,7 @@ public class PaymentOrchestrator {
                 } catch (Exception e) {
                 }
             }
-            
+
         } catch (Exception e) {
         }
     }
