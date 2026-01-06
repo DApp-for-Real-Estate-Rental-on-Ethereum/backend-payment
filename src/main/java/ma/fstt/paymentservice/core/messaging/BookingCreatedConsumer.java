@@ -1,5 +1,6 @@
 package ma.fstt.paymentservice.core.messaging;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -7,9 +8,12 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 @Component
+@RequiredArgsConstructor
 public class BookingCreatedConsumer {
     private final BlockingQueue<Long> bookingIdQueue = new LinkedBlockingQueue<>();
     private volatile Long lastReceivedBookingId = null;
+
+    private final ma.fstt.paymentservice.domain.repository.BookingRepository bookingRepository;
 
     @RabbitListener(queues = "booking.created")
     public void handleBookingCreated(BookingCreatedMessage message) {
@@ -19,9 +23,27 @@ public class BookingCreatedConsumer {
                 return;
             }
 
+            // Save to Database
+            ma.fstt.paymentservice.domain.entity.Booking booking = bookingRepository.findById(bookingId)
+                    .orElse(new ma.fstt.paymentservice.domain.entity.Booking());
+
+            booking.setId(bookingId);
+            booking.setUserId(message.getTenantId());
+            booking.setPropertyId(message.getPropertyId());
+            if (message.getFinalRentAmount() != null) {
+                booking.setTotalPrice(message.getFinalRentAmount().doubleValue());
+            }
+            // Only update status if it's new or changing (preserving flow)
+            if (booking.getStatus() == null) {
+                booking.setStatus(message.getStatus() != null ? message.getStatus() : "PENDING_PAYMENT");
+            }
+
+            bookingRepository.save(booking);
+
             lastReceivedBookingId = bookingId;
             bookingIdQueue.offer(bookingId);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -41,7 +63,7 @@ public class BookingCreatedConsumer {
         private Long bookingId;
         private Long tenantId;
         private Long ownerId;
-        private Long propertyId;
+        private String propertyId;
         private java.math.BigDecimal finalRentAmount;
         private java.math.BigDecimal depositAmount;
         private String status;
@@ -70,11 +92,11 @@ public class BookingCreatedConsumer {
             this.ownerId = ownerId;
         }
 
-        public Long getPropertyId() {
+        public String getPropertyId() {
             return propertyId;
         }
 
-        public void setPropertyId(Long propertyId) {
+        public void setPropertyId(String propertyId) {
             this.propertyId = propertyId;
         }
 
@@ -103,4 +125,3 @@ public class BookingCreatedConsumer {
         }
     }
 }
-

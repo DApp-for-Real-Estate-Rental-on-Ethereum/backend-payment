@@ -1,0 +1,24 @@
+FROM eclipse-temurin:17-jre-alpine
+
+WORKDIR /app
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Copy the built JAR from local target directory
+COPY target/*.jar app.jar
+
+# Create non-root user
+RUN addgroup -g 1001 -S appuser && \
+    adduser -S -D -H -u 1001 -h /app -s /sbin/nologin -G appuser appuser
+RUN chown -R appuser:appuser /app
+USER appuser
+
+# Expose port
+EXPOSE 8085
+
+# Health check (Port 8085 for Payment Service)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8085/actuator/health || exit 1
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

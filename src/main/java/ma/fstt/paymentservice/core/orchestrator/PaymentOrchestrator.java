@@ -242,6 +242,12 @@ public class PaymentOrchestrator {
                 transactionRepository.save(transaction);
             }
 
+            booking.setStatus("CONFIRMED");
+            bookingRepository.save(booking);
+
+            // Optionally trigger cancellation of overlapping bookings
+            cancelOverlappingBookings(bookingId);
+
         } catch (BusinessException e) {
             throw e;
         } catch (Exception e) {

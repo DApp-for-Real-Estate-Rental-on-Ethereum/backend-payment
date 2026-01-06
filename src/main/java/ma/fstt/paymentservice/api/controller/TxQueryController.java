@@ -23,7 +23,7 @@ public class TxQueryController {
             return transactionRepository.findByTxHash(hash)
                     .map(tx -> {
                         String statusString = tx.getStatus() != null ? tx.getStatus().name() : "UNKNOWN";
-                        
+
                         TxStatusResponse response = TxStatusResponse.builder()
                                 .txHash(tx.getTxHash())
                                 .status(statusString)
@@ -38,6 +38,33 @@ public class TxQueryController {
         }
     }
 
-    
-}
+    @GetMapping("/stats")
+    public ResponseEntity<ma.fstt.paymentservice.api.dto.PaymentStatsDTO> getPaymentStats(
+            @RequestParam Long userId,
+            @RequestHeader(value = "X-User-Id", required = false) String requesterId,
+            @RequestHeader(value = "X-User-Roles", required = false) String requesterRoles) {
 
+        boolean isAdmin = requesterRoles != null && requesterRoles.contains("ADMIN");
+        boolean isSelf = requesterId != null && requesterId.equals(userId.toString());
+
+        if (!isAdmin && !isSelf) {
+            return ResponseEntity.status(403).build();
+        }
+
+        Long total = transactionRepository.countByUserId(userId);
+        Long success = transactionRepository.countByUserIdAndStatus(userId,
+                ma.fstt.paymentservice.domain.entity.enums.TransactionStatusEnum.SUCCESS);
+        Long failed = transactionRepository.countByUserIdAndStatus(userId,
+                ma.fstt.paymentservice.domain.entity.enums.TransactionStatusEnum.FAILED);
+        Double avg = transactionRepository.getAvgTransactionAmountByUserId(userId);
+
+        return ResponseEntity.ok(ma.fstt.paymentservice.api.dto.PaymentStatsDTO.builder()
+                .id(userId)
+                .totalTransactions(total != null ? total : 0L)
+                .successfulTransactions(success != null ? success : 0L)
+                .failedTransactions(failed != null ? failed : 0L)
+                .avgTransactionAmount(avg != null ? avg : 0.0)
+                .build());
+    }
+
+}

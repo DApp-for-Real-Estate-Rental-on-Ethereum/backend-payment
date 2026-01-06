@@ -25,10 +25,10 @@ public class Booking {
     @Column(name = "property_id", nullable = true)
     private String propertyId; // Changed to String to support UUID from booking-service
 
-    @Column(name = "check_in_date", nullable = false, columnDefinition = "DATE")
+    @Column(name = "check_in_date", nullable = true, columnDefinition = "DATE")
     private LocalDate checkInDate;
 
-    @Column(name = "check_out_date", nullable = false, columnDefinition = "DATE")
+    @Column(name = "check_out_date", nullable = true, columnDefinition = "DATE")
     private LocalDate checkOutDate;
 
     @Column(name = "on_chain_tx_hash", nullable = true, columnDefinition = "TEXT")
@@ -72,4 +72,3 @@ public class Booking {
         updatedAt = Instant.now();
     }
 }
-
